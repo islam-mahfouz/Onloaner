@@ -1,0 +1,41 @@
+/*------------------------------------------------------------------
+[Style Index]
+
+0. Custom Resets and utilities
+1. Navigation Bar
+2. Main Slider
+3. Results section
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[0. Custom Reset and utilities]
+
+Reseting styles for individual elements
+-------------------------------------------------------------------*/
+/* line 16, main.scss */
+body {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 24, main.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 28, main.scss */
+.hide {
+  display: none;
+}
+
+/* line 32, main.scss */
+.center {
+  text-align: center;
+}
+
+/*------------------------------------------------------------------
+[1. Navigation Bar]
+
+
+-------------------------------------------------------------------*/
