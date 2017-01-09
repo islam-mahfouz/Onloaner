@@ -1,7 +1,7 @@
 {
   "name": "Onloaner",
   "version": "1.0.0",
-  "description": "",
+  "description": "online loaning service",
   "main": "index.js",
   "scripts": {
     "compile": "webpack",
@@ -21,5 +21,8 @@
     "react-dom": "^15.4.2",
     "webpack": "^1.14.0",
     "webpack-dev-middleware": "^1.9.0"
+  },
+  "devDependencies": {
+    "babel-plugin-react-html-attrs": "^2.0.0"
   }
 }
