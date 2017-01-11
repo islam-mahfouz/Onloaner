@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
+import Tabs from './Tabs';
 
 export default class Application extends React.Component {
  
@@ -7,6 +8,7 @@ export default class Application extends React.Component {
     return (
       <div>
       <Navbar></Navbar>
+      <Tabs></Tabs>
       </div>
     );
   }

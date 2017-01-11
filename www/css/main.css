@@ -39,3 +39,12 @@ a {
 
 
 -------------------------------------------------------------------*/
+/* line 42, main.scss */
+.card {
+  position: relative;
+}
+/* line 45, main.scss */
+.card .result {
+  position: absolute;
+  left: 60%;
+}
