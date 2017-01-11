@@ -1,26 +1,13 @@
 import React from 'react';
- 
-/**
- * A counter button: tap the button to increase the count.
- */
-class Application extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      count: 0,
-    };
-  }
+import Navbar from './Navbar';
+
+export default class Application extends React.Component {
  
   render() {
     return (
-      <button
-        onClick={() => {
-          this.setState({ count: this.state.count + 1 });
-        }}
-      >
-        Count: {this.state.count}
-      </button>
+      <div>
+      <Navbar></Navbar>
+      </div>
     );
   }
 }
-export default Counter;
