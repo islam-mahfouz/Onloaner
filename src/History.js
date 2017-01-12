@@ -13,45 +13,29 @@ export default class History extends React.Component {
     };
   }
 
-
 /* change state variable on extend button press */
   extend(){
     this.setState({
   		extended: true
   	});
-  }
+}
 
   render() {
     var items = this.props.loan;
-    /*var extendBtn = <a class="waves-effect waves-light btn small green lighten" onClick={this.extend.bind(this)}>Extend!</a>;
-    if(this.state.extended)
-      {
-        value = this.props.moneyDue + this.props.extension;
-        var newDate = this.props.dateMilli + (7 * 86400000);
-        date = new Date(newDate).toDateString();
-        days = parseInt(days) + 7;
-        extendBtn = <strong>Already Extended!</strong>;
-      }*/
+    var extendBtn = <a class="waves-effect waves-light btn small green lighten" onClick={this.extend.bind(this)}>Extend!</a>;
     var itemslist = items.map(function(item, index){
       var value = item.moneyDue; // Money to be paid
       var date = item.PayDay;    // Date of payment
       var days = item.daysNo;    // Number of loan days
-      
-
-      
-        return(
+      return(
             <tr key={index}>
               <td>{item.moneyBorrowed} Eur</td>
               <td>{days}</td>
               <td>{value} Eur</td>
-              <td>{date}<span><a class="waves-effect waves-light btn small green lighten">Extend!</a></span></td>
+              <td>{date}<span>{extendBtn}</span></td>
             </tr>
           );
     })
-
-
-
-  	
 
     return (
       <div class="row">

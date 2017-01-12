@@ -25,7 +25,6 @@ export default class Tabs extends React.Component {
       extension:ext,
       dateMilli:date
     });
-    
     this.setState({
       loan:loanArray
     });

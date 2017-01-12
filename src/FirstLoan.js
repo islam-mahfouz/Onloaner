@@ -36,7 +36,7 @@ export default class FirstLoan extends React.Component {
 
 /* gets today's date and sets payment date */
   getDaysSetDate(e){
-    let days = e.target.value;
+    let days = parseInt(e.target.value);
     let today = new Date();
     var payday = today.setMilliseconds( today.getMilliseconds() + (days * 86400000) );
     var dueDate = new Date(payday).toDateString();
@@ -87,6 +87,7 @@ export default class FirstLoan extends React.Component {
        this.state.PayDay,
        this.state.extension,
        this.state.dateMilli);
+       window.open = "http://localhost:3000/#second";
     }
   }
 
