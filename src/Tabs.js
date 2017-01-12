@@ -11,21 +11,25 @@ export default class Tabs extends React.Component {
  constructor(props) {
     super(props)
     this.state = {
-    	moneyBorrowed:0, daysNo:0, moneyDue:0, PayDay:"",extension:0, dateMilli:0
+      loan:[]
     };
   }
 
 /* updates the state variables before passing to History */
   handler(money,daysCount,dueMoney,datePay,ext,date){
-  	this.setState({
-  		moneyBorrowed:money,
-  		daysNo:daysCount,
-  		moneyDue: dueMoney,
-  		PayDay:datePay,
-  		extension:ext,
-  		dateMilli:date
-  	});
-  }
+    loanArray.push({
+      moneyBorrowed:money,
+      daysNo:daysCount,
+      moneyDue: dueMoney,
+      PayDay:datePay,
+      extension:ext,
+      dateMilli:date
+    });
+    
+    this.setState({
+      loan:loanArray
+    });
+   }
 
   render() {
     return (
@@ -37,13 +41,7 @@ export default class Tabs extends React.Component {
 	      </ul>
 	    </div>
 	    <div id="first" class="col s12"><FirstLoan handler={this.handler.bind(this)}></FirstLoan></div>
-	    <div id="second" class="col s12"><History moneyBorrowed = {this.state.moneyBorrowed}
-	    										  daysNo = {this.state.daysNo}
-	    										  moneyDue = {this.state.moneyDue}
-	    										  PayDay = {this.state.PayDay}
-	    										  extension = {this.state.extension}
-	    										  dateMilli = {this.state.dateMilli} >
-	    								</History>
+	    <div id="second" class="col s12"><History loan={this.state.loan}></History>
 	    </div>
       </div>
     );

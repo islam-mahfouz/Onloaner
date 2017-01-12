@@ -13,6 +13,7 @@ export default class History extends React.Component {
     };
   }
 
+
 /* change state variable on extend button press */
   extend(){
     this.setState({
@@ -21,20 +22,36 @@ export default class History extends React.Component {
   }
 
   render() {
+    var items = this.props.loan;
+    /*var extendBtn = <a class="waves-effect waves-light btn small green lighten" onClick={this.extend.bind(this)}>Extend!</a>;
+    if(this.state.extended)
+      {
+        value = this.props.moneyDue + this.props.extension;
+        var newDate = this.props.dateMilli + (7 * 86400000);
+        date = new Date(newDate).toDateString();
+        days = parseInt(days) + 7;
+        extendBtn = <strong>Already Extended!</strong>;
+      }*/
+    var itemslist = items.map(function(item, index){
+      var value = item.moneyDue; // Money to be paid
+      var date = item.PayDay;    // Date of payment
+      var days = item.daysNo;    // Number of loan days
+      
 
-  	var value = this.props.moneyDue; // Money to be paid
-  	var date = this.props.PayDay;    // Date of payment
-  	var days = this.props.daysNo;    // Number of loan days
-  	var extendBtn = <a class="waves-effect waves-light btn small green lighten" onClick={this.extend.bind(this)}>Extend!</a>;
+      
+        return(
+            <tr key={index}>
+              <td>{item.moneyBorrowed} Eur</td>
+              <td>{days}</td>
+              <td>{value} Eur</td>
+              <td>{date}<span><a class="waves-effect waves-light btn small green lighten">Extend!</a></span></td>
+            </tr>
+          );
+    })
 
-  	if(this.state.extended)
-  	{
-  		value = this.props.moneyDue + this.props.extension;
-  		var newDate = this.props.dateMilli + (7 * 86400000);
-  		date = new Date(newDate).toDateString();
-  		days = parseInt(days) + 7;
-  		extendBtn = <strong>Already Extended!</strong>;
-  	}
+
+
+  	
 
     return (
       <div class="row">
@@ -52,12 +69,7 @@ export default class History extends React.Component {
         </thead>
 
         <tbody>
-          <tr>
-            <td>{this.props.moneyBorrowed} Eur</td>
-            <td>{days}</td>
-            <td>{value} Eur</td>
-            <td>{date}<span>{extendBtn}</span></td>
-          </tr>
+          {itemslist}
         </tbody>
       </table>
       			</div>
