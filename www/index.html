@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<!-- BEGIN html -->
+<html lang = "en">
+	<!-- BEGIN head -->
+	<head>
+		<title>Onloaner</title>
+
+		<!-- Meta Tags -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="description" content="" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+		<!-- Stylesheets -->
+		<link type="text/css" rel="stylesheet" href="css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" />
+		<link type="text/css" rel="stylesheet" href="css/main.css" />
+
+		<!-- HTML5shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+		<!--[if lt IE 9]>
+			<script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	<!-- END head -->
+	</head>
+
+	<!-- BEGIN body -->
+	<body>
+
+		<div id="mount">
+			
+		</div>
+		
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/date.js"></script>
+		<script src="/bundle.js"></script>
+		<script>
+
+			$( document ).ready(function() {
+				onLoadDate = new Date(); //used in risk calculation
+				countClicks = 0; //used to check number of loan submits per minute for risk calculation
+				loanArray=[]; //used to store session variables for history
+			});
+
+		</script>
+		<!-- End Scripts -->
+
+	<!-- END body -->
+	</body>
+<!-- END html -->
+</html>

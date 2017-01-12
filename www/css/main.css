@@ -1,0 +1,125 @@
+/*------------------------------------------------------------------
+[Style Index]
+
+0. Custom Resets and utilities
+1. Navigation Bar
+2. Tabs
+  2.1 FirstLoan
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[0. Custom Reset and utilities]
+
+Reseting styles for individual elements
+-------------------------------------------------------------------*/
+/* line 16, main.scss */
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 24, main.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 28, main.scss */
+span {
+  padding-left: 20px;
+}
+
+/*------------------------------------------------------------------
+[1. Navigation Bar]
+
+
+-------------------------------------------------------------------*/
+/* line 38, main.scss */
+nav {
+  height: 70px;
+}
+/* line 40, main.scss */
+nav .brand-logo {
+  padding: 5px 0px 0px 20px;
+}
+
+/*------------------------------------------------------------------
+[2. Tabs]
+
+
+-------------------------------------------------------------------*/
+/* line 52, main.scss */
+.tabs {
+  margin-top: 20px;
+}
+
+  /*------------------------------------------------------------------
+  [2.1 FirstLoan]
+
+
+  -------------------------------------------------------------------*/
+/* line 62, main.scss */
+.card {
+  position: relative;
+  width: 95%;
+  margin: 20px auto;
+  z-index: 1;
+}
+/* line 69, main.scss */
+.card .result {
+  position: absolute;
+  left: 60%;
+  color: white;
+  width: 320px;
+  height: 270px;
+  text-align: center;
+  border-radius: 30px;
+  padding: 20px 10px 10px 10px;
+}
+/* line 78, main.scss */
+.card .result p {
+  padding: 6px 10px 6px 10px;
+  margin-top: 2px;
+}
+/* line 82, main.scss */
+.card .result a {
+  margin-top: 12px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* line 92, main.scss */
+.money-amount {
+  position: relative;
+}
+/* line 94, main.scss */
+.money-amount .money-limit {
+  position: absolute;
+  top: 20px;
+  left: 25%;
+  width: 100px;
+  height: 30px;
+  color: white;
+  text-align: center;
+  padding: 8px 3px;
+  background-color: red;
+  border-radius: 10px;
+}
+
+/* line 108, main.scss */
+.days-amount {
+  position: relative;
+}
+/* line 110, main.scss */
+.days-amount .days-limit {
+  position: absolute;
+  top: 20px;
+  left: 25%;
+  width: 90px;
+  height: 30px;
+  color: white;
+  text-align: center;
+  padding: 8px 3px;
+  background-color: red;
+  border-radius: 10px;
+}
