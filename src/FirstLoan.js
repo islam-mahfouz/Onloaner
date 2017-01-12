@@ -87,7 +87,6 @@ export default class FirstLoan extends React.Component {
        this.state.PayDay,
        this.state.extension,
        this.state.dateMilli);
-       window.open = "http://localhost:3000/#second";
     }
   }
 

@@ -5,18 +5,15 @@ import React from 'react';
 
 export default class History extends React.Component {
 
- constructor(props) {
-    super(props)
-    this.state = {
-      extended:false // refers to having the loan extended or not
-   
-    };
-  }
-
 /* change state variable on extend button press */
-  extend(e){
-    e.preventDefault();
-    $(".xtnd").css("background-color","red");
+  extend(index){
+  
+  var x = index;
+  $("#"+x).removeClass("green");
+  $("#"+x).addClass("red");
+  $("#"+x).text("Extended!");
+  $("#"+x).prop("disabled","true");
+
 }
 
   render() {
@@ -28,19 +25,22 @@ export default class History extends React.Component {
       var days = item.daysNo;    // Number of loan days
       var newdays = days+7;
       var newvalue = value+item.extension;
+      var dateInMs = item.dateMilli;
+      var newDateMs = dateInMs+(7 * 86400000);
+      var newdate = new Date(newDateMs).toDateString();
       return(
             <tr key={index}>
               <td>{item.moneyBorrowed} Eur</td>
               <td>{days}</td>
               <td>{value} Eur</td>
-              <td>{date}<span><a id={index} class="waves-effect waves-light btn small green lighten xtnd"
+              <td>{date}<span><a id={index} class="waves-effect waves-light btn small green lighten"
                                  onClick={that.extend.bind(that,index)}>Extend!
                               </a>
                         </span>
               </td>
               <td>{newdays}</td>
               <td>{newvalue}</td>
-              <td></td>
+              <td>{newdate}</td>
             </tr>
           );
     })
@@ -53,13 +53,13 @@ export default class History extends React.Component {
       				<table class="bordered highlight">
         <thead>
           <tr>
-              <th data-field="id">Amount Borrowed</th>
-              <th data-field="name">Days</th>
-              <th data-field="price">Total Due</th>
-              <th data-field="price">Payment Date</th>
-              <th data-field="price">Extended (Days)</th>
-              <th data-field="price">Extended (Amount)</th>
-              <th data-field="price">New Payment Date</th>
+              <th data-field="amountBorrowed">Amount Borrowed</th>
+              <th data-field="Days">Days</th>
+              <th data-field="totalDue">Total Due</th>
+              <th data-field="paymentDate">Payment Date</th>
+              <th  data-field="extendedDays">Extended (Days)</th>
+              <th  data-field="extendedAmount">Extended (Amount)</th>
+              <th data-field="newDate">New Payment Date</th>
 
           </tr>
         </thead>
