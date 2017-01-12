@@ -41,9 +41,12 @@
 		<script type="text/javascript" src="js/date.js"></script>
 		<script src="/bundle.js"></script>
 		<script>
-			$( document ).ready(function() {
 
+			$( document ).ready(function() {
+				onLoadDate = new Date(); //used in risk calculation
+				countClicks = 0; //used to check number of loan submits per minute for risk calculation
 			});
+
 		</script>
 		<!-- End Scripts -->
 
